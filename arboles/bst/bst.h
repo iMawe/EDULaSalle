@@ -12,7 +12,8 @@ class node
 private:
 	K key;
     V value;
-
+    int hgt;
+    unsigned int freq;
     node<K,V> * p_children[2];
 
 public:
@@ -54,30 +55,30 @@ public:
 	void rotacionizq(node<K,V>** n){ 
 		int hgt;
 	    node<K,V>* k1; 
-	    k1=(*n)->p_child[0]; 
-	    (*n)->p_child[0]=k1->p_child[1]; 
-	    k1->p_child[1]=*n; 
+	    k1=(*n)->p_children[0]; 
+	    (*n)->p_children[0]=k1->p_children[1]; 
+	    k1->p_children[1]=*n; 
 	    *n=k1;
-	    (*n)->hgt=max(altura((*n)->p_child[0]),altura((*n)->p_child[1]))+1; 
-	    k1->hgt=max(altura(k1->p_child[0]),altura((k1)->p_child[1]))+1; 
+	    (*n)->hgt=max(altura((*n)->p_children[0]),altura((*n)->p_children[1]))+1; 
+	    k1->hgt=max(altura(k1->p_children[0]),altura((k1)->p_children[1]))+1; 
 	}
 	void rotacionder(node<K,V>** n){ 
 		int hgt;
 	    node<K,V>* k1; 
-	    k1=(*n)->p_child[1]; 
-	    (*n)->p_child[1]=k1->p_child[0]; 
-	    k1->p_child[0]=*n; 
+	    k1=(*n)->p_children[1]; 
+	    (*n)->p_children[1]=k1->p_children[0]; 
+	    k1->p_children[0]=*n; 
 	    *n = k1;
-	    (*n)->hgt=max(altura((*n)->p_child[0]),altura((*n)->p_child[1]))+1; 
-	    k1->hgt=max(altura(k1->p_child[1]),altura((k1)->p_child[0]))+1; 
+	    (*n)->hgt=max(altura((*n)->p_children[0]),altura((*n)->p_children[1]))+1; 
+	    k1->hgt=max(altura(k1->p_children[1]),altura((k1)->p_children[0]))+1; 
 	}
 	void doblerotacionizqui(node<K,V>** &k3){ 
-	    rotacionder(&(*k3)->p_child[0]);
+	    rotacionder(&(*k3)->p_children[0]);
 	    rotacionizq(k3);
 
 	} 
 	void doblerotaciondere(node<K,V>** &k3){ 
-	    rotacionizq(&(*k3)->p_child[1]); 
+	    rotacionizq(&(*k3)->p_children[1]); 
 	    rotacionder(k3); 
 	}
 
