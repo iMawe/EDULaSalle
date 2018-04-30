@@ -7,7 +7,7 @@ int main(){
 	three.insert(2,5);
 	three.insert(3,4);
 	three.print();
-	three.remove(5);
+	three.remove(2);
 	cout<<endl;
 	three.print();
 	cout<<"HOLI"<<endl;
