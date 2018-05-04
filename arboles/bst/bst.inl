@@ -28,7 +28,7 @@ template <class K, class V>
 bool bst<K,V>::find(K keys){
 	node<K,V> **aux;
     if(_find(aux,keys)==true){
-        cout<<keys<<" encontrado"<<endl;
+        cout<<keys<<endl;
     }else{
         cout<<keys<<" no encontrado";
     }          

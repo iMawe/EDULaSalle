@@ -12,7 +12,7 @@ class node
 private:
 	K key;
     V value;
-    int hgt;
+    int hgt;//Esta es la raíz de la altura del nodo del árbol
     unsigned int freq;
     node<K,V> * p_children[2];
 
@@ -47,10 +47,6 @@ public:
 
 	int altura(node<K,V> * n);
 	int altura();
-
-	int totalThrees(int x){
-
-	}
 
 	void rotacionizq(node<K,V>** n){ 
 		int hgt;
