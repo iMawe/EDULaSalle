@@ -12,8 +12,8 @@ class node
 private:
 	K key;
     V value;
-    int hgt;//Esta es la raíz de la altura del nodo del árbol
-    unsigned int freq;
+    //int hgt;//Esta es la raíz de la altura del nodo del árbol
+    //unsigned int freq;
     node<K,V> * p_children[2];
 
 public:
@@ -48,7 +48,7 @@ public:
 	int altura(node<K,V> * n);
 	int altura();
 
-	void rotacionizq(node<K,V>** n){ 
+	/*void rotacionizq(node<K,V>** n){ 
 		int hgt;
 	    node<K,V>* k1; 
 	    k1=(*n)->p_children[0]; 
@@ -76,7 +76,7 @@ public:
 	void doblerotaciondere(node<K,V>** &k3){ 
 	    rotacionizq(&(*k3)->p_children[1]); 
 	    rotacionder(k3); 
-	}
+	}*/
 
 	void remove(K key);//--->tarea
 

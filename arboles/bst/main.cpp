@@ -15,22 +15,36 @@ int numArboles(int nodos){
 		t=(factorial(2*nodos))/(factorial(nodos+1)*factorial(nodos));
 		return t;
 	}
+	
+/*int numArboles2(int nodos){
+		int t;
+		for(int i=0; i<nodos; i++){
+			t=
+		}
+	}*/
 
 int main(){
-	int t;
-	bst<int,int> three;
-	three.insert(1,1);
-	three.insert(2,5);
-	three.insert(3,4);
-	three.print();
-	three.remove(2);
+	
+	bst<int, float> tree;
+	tree.insert(41, .43);
+	tree.insert(20, .5454);
+	tree.insert(65, .23);
+	tree.insert(50, .4542);
+	tree.insert(91, 43.5454);
+	tree.insert(72, 3.23);
+	tree.insert(99, 321.32);
+	tree.print();
 	cout<<endl;
-	three.print();
+	tree.remove(65);
+	tree.print();
 	cout<<endl;
+	tree.insert(65,89);
+	tree.print();
+	/*cout<<endl;
 	t=numArboles(4);
 	cout<<t;
 	cout<<endl;
 
-	cout<<"HOLI"<<endl;
+	cout<<"HOLI"<<endl;*/
 	return 0;
 }
